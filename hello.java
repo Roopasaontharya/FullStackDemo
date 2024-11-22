@@ -7,24 +7,23 @@
 
 public class hello {
     public static void main(String[] args) {
-        // The number for which we want to calculate the factorial
-        int num = 5;  // You can change this number to test other inputs
+        int n = 5; // Number of rows in the pyramid
         
-        // Calculating factorial
-        long factorial = 1;
-        
-        // If the number is 0 or 1, factorial is 1
-        if (num == 0 || num == 1) {
-            factorial = 1;
-        } else {
-            // Loop to calculate factorial
-            for (int i = 1; i <= num; i++) {
-                factorial *= i;
+        for (int i = 1; i <= n; i++) {
+            // Print spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
             }
+            
+            // Print stars
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            
+            // Move to the next line
+            System.out.println();
         }
-        
-        // Printing the result
-        System.out.println("Factorial of " + num + " is " + factorial);
     }
 }
+
 
