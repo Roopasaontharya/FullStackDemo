@@ -5,41 +5,26 @@
 //     }
 // }
 
-import java.util.Scanner;
-
 public class hello {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // The number for which we want to calculate the factorial
+        int num = 5;  // You can change this number to test other inputs
         
-        // Asking for the number of rows for the upper half of the diamond
-        System.out.print("Enter the number of rows for the diamond pattern: ");
-        int n = scanner.nextInt();
+        // Calculating factorial
+        long factorial = 1;
         
-        // Print the upper half of the diamond
-        for (int i = 1; i <= n; i++) {
-            // Print leading spaces
-            for (int j = i; j < n; j++) {
-                System.out.print(" ");
+        // If the number is 0 or 1, factorial is 1
+        if (num == 0 || num == 1) {
+            factorial = 1;
+        } else {
+            // Loop to calculate factorial
+            for (int i = 1; i <= num; i++) {
+                factorial *= i;
             }
-            // Print stars
-            for (int j = 1; j <= (2 * i - 1); j++) {
-                System.out.print("*");
-            }
-            System.out.println();
         }
         
-        // Print the lower half of the diamond
-        for (int i = n - 1; i >= 1; i--) {
-            // Print leading spaces
-            for (int j = n; j > i; j--) {
-                System.out.print(" ");
-            }
-            // Print stars
-            for (int j = 1; j <= (2 * i - 1); j++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+        // Printing the result
+        System.out.println("Factorial of " + num + " is " + factorial);
     }
 }
 
